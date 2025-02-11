@@ -15,7 +15,8 @@ from halotools.empirical_models import NFWPhaseSpace, Zheng07Sats
 from halotools.mock_observables import return_xyz_formatted_array
 from halotools.utils import crossmatch
 from halotools.utils.table_utils import compute_conditional_percentiles
-
+import multiprocessing as mp
+mp.set_start_method("fork", force=True)
 
 class TabCorr:
     """Class to tabulate halo and predict galaxy correlation functions."""
